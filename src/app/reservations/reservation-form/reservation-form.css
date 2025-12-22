@@ -1,0 +1,79 @@
+/* Fond avec photo et overlay coloré */
+.reservation-page {
+  position: relative;
+  min-height: 100vh;
+  background: url('../../images/r.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+/* Overlay inspiré Pinterest : violet pastel, fuchsia, pêche clair */
+.reservation-page .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(186,85,211,0.5),
+    rgba(255,105,180,0.5),
+    rgba(255,218,185,0.5)
+  );
+  z-index: 1;
+}
+
+/* Carreau central du formulaire */
+.form-container {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  font-weight: 600;
+  color: #af60da; /* violet pastel */
+}
+
+/* Titres */
+.form-container h2 {
+  margin-bottom: 1.5rem;
+  color: #d743a3;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Champs du formulaire */
+.form-container .form-control,
+.form-container .form-select {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+/* Bouton submit */
+.btn-submit {
+  background: linear-gradient(45deg, #ba55d3, #ff69b4, #ffdAB9);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.btn-submit:hover {
+  filter: brightness(1.1);
+}
+
+/* Labels un peu plus gras */
+.form-label {
+  font-weight: 600;
+  color: #c04e9e;
+}

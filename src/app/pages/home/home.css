@@ -1,0 +1,80 @@
+.home-page {
+  position: relative;
+  min-height: 100vh;
+  background: url('../../images/reservations.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-page .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(186,85,211,0.6),
+    rgba(255,182,193,0.6),
+    rgba(255,218,185,0.6)
+  );
+  z-index: 1;
+}
+
+.home-container {
+  position: relative;
+  z-index: 2;
+  background: rgba(255,255,255,0.9);
+  padding: 3rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 600px;
+}
+
+.home-container h1 {
+  font-weight: 700;
+  color: #6f42c1;
+  margin-bottom: 0.5rem;
+}
+
+.home-container p {
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.btn-home {
+  padding: 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.btn-home:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+}
+
+/* Couleurs des boutons */
+.btn-clients {
+  background: linear-gradient(45deg, #6f42c1, #b98bfd);
+}
+
+.btn-voyages {
+  background: linear-gradient(45deg, #ff8c42, #ffcc99);
+}
+
+.btn-reservations {
+  background: linear-gradient(45deg, #ba55d3, #ff69b4);
+}
+
+.btn-paiements {
+  background: linear-gradient(45deg, #00bfff, #40e0d0);
+}

@@ -1,0 +1,104 @@
+<div class="reservation-page">
+  <div class="overlay"></div>
+
+  <div class="form-container">
+    <h2>{{ isEditMode ? 'Modifier' : 'Ajouter' }} une Réservation</h2>
+
+    <form (ngSubmit)="saveReservation()" #reservationForm="ngForm">
+
+      <!-- Client -->
+      <div class="mb-3">
+        <label class="form-label">Client</label>
+        <select 
+          [(ngModel)]="reservation.client.id" 
+          name="client" 
+          class="form-select" 
+          required 
+          #clientCtrl="ngModel">
+          <option *ngFor="let client of clients" [ngValue]="client.id">{{ client.nom }}</option>
+        </select>
+        <div *ngIf="clientCtrl.invalid && (clientCtrl.dirty || clientCtrl.touched)" class="text-danger">
+          Veuillez sélectionner un client
+        </div>
+      </div>
+
+      <!-- Voyage -->
+      <div class="mb-3">
+        <label class="form-label">Voyage</label>
+        <select 
+          [(ngModel)]="reservation.voyage.id" 
+          name="voyage" 
+          class="form-select" 
+          required
+          #voyageCtrl="ngModel">
+          <option *ngFor="let voyage of voyages" [ngValue]="voyage.id">{{ voyage.destination }}</option>
+        </select>
+        <div *ngIf="voyageCtrl.invalid && (voyageCtrl.dirty || voyageCtrl.touched)" class="text-danger">
+          Veuillez sélectionner un voyage
+        </div>
+      </div>
+
+      <!-- Date de réservation -->
+      <div class="mb-3">
+        <label class="form-label">Date de réservation</label>
+        <input 
+          type="date" 
+          [(ngModel)]="reservation.dateReservation" 
+          name="dateReservation" 
+          class="form-control" 
+          required 
+          #dateCtrl="ngModel">
+        <div *ngIf="dateCtrl.invalid && (dateCtrl.dirty || dateCtrl.touched)" class="text-danger">
+          La date de réservation est obligatoire
+        </div>
+      </div>
+
+      <!-- Nombre de personnes -->
+      <div class="mb-3">
+        <label class="form-label">Nombre de personnes</label>
+        <input 
+          type="number" 
+          [(ngModel)]="reservation.nombrePersonnes" 
+          name="nombrePersonnes" 
+          class="form-control" 
+          required 
+          min="1"
+          #nombreCtrl="ngModel">
+        <div *ngIf="nombreCtrl.invalid && (nombreCtrl.dirty || nombreCtrl.touched)" class="text-danger">
+          Veuillez saisir un nombre valide de personnes
+        </div>
+      </div>
+
+      <!-- Montant total -->
+      <div class="mb-3">
+        <label class="form-label">Montant total</label>
+        <input 
+          type="number" 
+          [(ngModel)]="reservation.montantTotal" 
+          name="montantTotal" 
+          class="form-control" 
+          required 
+          min="1"
+          #montantCtrl="ngModel">
+        <div *ngIf="montantCtrl.invalid && (montantCtrl.dirty || montantCtrl.touched)" class="text-danger">
+          Veuillez saisir un montant valide
+        </div>
+      </div>
+
+      <!-- Statut -->
+      <div class="mb-3">
+        <label class="form-label">Statut</label>
+        <select [(ngModel)]="reservation.statut" name="statut" class="form-select">
+          <option value="EN_ATTENTE">EN_ATTENTE</option>
+          <option value="CONFIRMEE">CONFIRMEE</option>
+          <option value="ANNULEE">ANNULEE</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-submit" [disabled]="reservationForm.invalid">
+        {{ isEditMode ? 'Modifier' : 'Ajouter' }}
+      </button>
+
+    </form>
+  </div>
+</div>

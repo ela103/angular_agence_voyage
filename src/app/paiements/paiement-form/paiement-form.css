@@ -1,0 +1,74 @@
+/* Fond avec photo et overlay coloré */
+.paiement-page {
+  position: relative;
+  min-height: 100vh;
+  background: url('../../images/paiements.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+/* Overlay bleu clair, turquoise, pêche pastel */
+.paiement-page .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(173,216,230,0.5),  /* bleu clair */
+    rgba(64,224,208,0.5),    /* turquoise */
+    rgba(255,218,185,0.5)    /* pêche pastel */
+  );
+  z-index: 1;
+}
+
+/* Carreau central du formulaire */
+.form-container {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
+
+/* Titres */
+.form-container h2 {
+  margin-bottom: 1.5rem;
+  color: #42bbb5; /* bleu vif */
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Champs du formulaire */
+.form-container .form-control,
+.form-container .form-select,
+.form-container input[type="number"],
+.form-container input[type="date"] {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+/* Bouton submit */
+.btn-submit {
+  background: linear-gradient(45deg, #00bfff, #40e0d0, #ffdAB9);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.btn-submit:hover {
+  filter: brightness(1.1);
+}

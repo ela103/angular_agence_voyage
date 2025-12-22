@@ -1,0 +1,47 @@
+<div class="voyage-form-page">
+  <div class="overlay"></div>
+  <div class="form-container">
+    <h2>{{ isEditMode ? 'Modifier' : 'Ajouter' }} un voyage</h2>
+
+    <form (ngSubmit)="saveVoyage()" #voyageForm="ngForm">
+
+      <!-- Destination -->
+      <div class="mb-3">
+        <label class="form-label">Destination</label>
+        <input 
+          type="text" 
+          [(ngModel)]="voyage.destination" 
+          name="destination" 
+          class="form-control" 
+          required 
+          #destinationCtrl="ngModel"
+        />
+        <div *ngIf="destinationCtrl.invalid && (destinationCtrl.dirty || destinationCtrl.touched)" class="text-danger">
+          La destination est obligatoire
+        </div>
+      </div>
+
+      <!-- Prix par personne -->
+      <div class="mb-3">
+        <label class="form-label">Prix par personne</label>
+        <input 
+          type="number" 
+          [(ngModel)]="voyage.prixParPersonne" 
+          name="prix" 
+          class="form-control" 
+          required 
+          min="1"
+          #prixCtrl="ngModel"
+        />
+        <div *ngIf="prixCtrl.invalid && (prixCtrl.dirty || prixCtrl.touched)" class="text-danger">
+          Le prix doit être supérieur à 0
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success btn-submit" [disabled]="voyageForm.invalid">
+        {{ isEditMode ? 'Modifier' : 'Ajouter' }}
+      </button>
+
+    </form>
+  </div>
+</div>

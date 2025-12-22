@@ -1,0 +1,74 @@
+/* Fond avec photo et overlay coloré pour le formulaire de voyage */
+.voyage-form-page {
+  position: relative;
+  min-height: 100vh;
+  background: url('../../images/voyages.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Overlay pour fondu rose pastel, orange clair et violet pastel */
+.voyage-form-page .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255,182,193,0.6),   /* rose pastel */
+    rgba(255,200,150,0.6),   /* orange clair */
+    rgba(186,85,211,0.6)     /* violet pastel */
+  );
+  z-index: 1;
+}
+
+/* Carreau central du formulaire */
+.form-container {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  font-weight: 600;
+  color: #a04d9f; 
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Titres */
+.form-container h2 {
+  margin-bottom: 1.5rem;
+  color: #a04d9f; /* violet */
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Champs du formulaire */
+.form-container .form-control {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+/* Bouton submit */
+.btn-submit {
+  background: linear-gradient(45deg, rgba(255,182,193,1), rgba(255,200,150,1), rgba(186,85,211,1));
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.btn-submit:hover {
+  filter: brightness(1.1);
+}

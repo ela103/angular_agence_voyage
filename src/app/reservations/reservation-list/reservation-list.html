@@ -1,0 +1,51 @@
+<div class="reservation-page">
+  <div class="overlay"></div>
+
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <h2>Liste des Réservations</h2>
+      <button class="btn btn-add-reservation" routerLink="/reservations/add">
+        Ajouter une réservation
+      </button>
+    </div>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Client</th>
+          <th>Voyage</th>
+          <th>Date</th>
+          <th>Nombre</th>
+          <th>Montant total</th>
+          <th>Statut</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let res of reservations">
+          <td>{{ res.id }}</td>
+          <td>{{ res.clientNom }}</td>
+          <td>{{ res.voyageDestination }}</td>
+          <td>{{ res.dateReservation | date }}</td>
+          <td>{{ res.nombrePersonnes }}</td>
+          <td>{{ res.montantTotal | currency:'USD' }}</td>
+          
+          <td>{{ res.statut | statutReservation }}</td>
+
+          
+          
+
+          <td>
+            <button class="btn btn-warning me-2" (click)="editReservation(res.id)">
+              Modifier
+            </button>
+            <button class="btn btn-danger" (click)="deleteReservation(res.id)">
+              Supprimer
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,119 @@
+/* Fond avec photo et overlay coloré */
+.reservation-page {
+  position: relative;
+  min-height: 100vh;
+  background: url('../../images/r.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: flex-start; 
+  justify-content: center;
+  padding: 2rem 0;
+}
+/* Titre de la page Voyages */
+.reservation-page h2 {
+  color: #ffffff; /* blanc */
+  font-weight: 700;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Overlay inspiré Pinterest : violet pastel, fuchsia, pêche clair */
+.reservation-page .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(186,85,211,0.5),
+    rgba(232, 55, 144, 0.5),
+    rgba(255,218,185,0.5)
+  );
+  z-index: 1;
+}
+
+/* Conteneur central */
+.reservation-page .container {
+  position: relative;
+  z-index: 2;
+  width: 95%;
+  max-width: 1200px;
+}
+
+/* Titres */
+h2 {
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Barre du titre + bouton */
+.d-flex.justify-content-between.align-items-center {
+  margin-bottom: 1.5rem;
+}
+
+/* Bouton Ajouter Réservation */
+.btn-add-reservation {
+  background-color: #fff;          
+  color: #ed4fb6;                  
+  font-weight: 600;
+  border: 2px solid #ed4fb6;
+  border-radius: 10px;
+  transition: 0.3s;
+  padding: 0.5rem 1rem;
+  
+}
+
+.btn-add-reservation:hover {
+  background-color: #ed4fb6; 
+  color: #fff;               
+  border-color: #ed4fb6;
+  transform: translateY(-2px);
+}
+
+/* Table */
+.table {
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+
+.table th, .table td {
+  vertical-align: middle !important;
+}
+
+/* Bordures verticales et alignement */
+.table th, .table td {
+  border: 1px solid #ddd;
+  vertical-align: middle !important;
+  text-align: center;
+  padding: 0.75rem;
+}
+
+/* Espacement entre boutons */
+.me-2 {
+  margin-right: 0.5rem; /* petit espace entre Modifier et Supprimer */
+}
+
+/* Modifier et Supprimer */
+.btn-warning {
+  background-color: #ed4fb6;
+  border-color: #ed4fb6;
+  color: #fff;
+}
+
+.btn-warning:hover {
+  background-color: #ea72c0;
+  border-color: #ea72c0;
+}
+
+.btn-danger {
+  background-color: #ffdAB9;
+  border-color: #ffdAB9;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #ffcaa3;
+  border-color: #ffcaa3;
+}

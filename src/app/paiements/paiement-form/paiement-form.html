@@ -1,0 +1,74 @@
+<div class="paiement-page">
+  <div class="overlay"></div>
+
+  <div class="form-container">
+    <h2>Effectuer un Paiement</h2>
+
+    <form (ngSubmit)="submit()" #paiementForm="ngForm">
+
+      <!-- Reservation ID -->
+      <div class="mb-3">
+        <label class="form-label">Reservation ID</label>
+        <input 
+          type="number"
+          class="form-control"
+          [(ngModel)]="paiement.reservation.id"
+          (ngModelChange)="onReservationIdChange()"
+          name="reservationId"
+          required
+          #reservationCtrl="ngModel">
+        <div *ngIf="reservationCtrl.invalid && (reservationCtrl.dirty || reservationCtrl.touched)" class="text-danger">
+          Veuillez saisir l'ID de réservation
+        </div>
+      </div>
+
+      <!-- Date Paiement -->
+      <div class="mb-3">
+        <label class="form-label">Date Paiement</label>
+        <input 
+          type="date"
+          class="form-control"
+          [(ngModel)]="paiement.datePaiement"
+          name="datePaiement"
+          readonly
+          required
+          #dateCtrl="ngModel">
+        <div *ngIf="dateCtrl.invalid && (dateCtrl.dirty || dateCtrl.touched)" class="text-danger">
+          La date de paiement est obligatoire
+        </div>
+      </div>
+
+      <!-- Montant -->
+      <div class="mb-3">
+        <label class="form-label">Montant</label>
+        <input 
+          type="number"
+          class="form-control"
+          [(ngModel)]="paiement.montant"
+          name="montant"
+          readonly
+          required
+          #montantCtrl="ngModel">
+        <div *ngIf="montantCtrl.invalid && (montantCtrl.dirty || montantCtrl.touched)" class="text-danger">
+          Le montant est obligatoire
+        </div>
+      </div>
+
+      <!-- Statut -->
+      <div class="mb-3">
+        <label class="form-label">Statut</label>
+        <select 
+          class="form-select"
+          [(ngModel)]="paiement.statut"
+          name="statut">
+          <option *ngFor="let s of statuts" [value]="s">{{ s }}</option>
+        </select>
+      </div>
+
+      <!-- Bouton soumission -->
+      <button type="submit" class="btn btn-submit" [disabled]="paiementForm.invalid">
+        Effectuer Paiement
+      </button>
+    </form>
+  </div>
+</div>

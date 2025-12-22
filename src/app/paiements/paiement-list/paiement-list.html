@@ -1,0 +1,38 @@
+
+<div class="paiement-page">
+  <div class="overlay"></div>
+  
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <h2>Liste des Paiements</h2>
+      <button class="btn btn-add-paiement" routerLink="/paiements/add">Ajouter Paiement</button>
+    </div>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Réservation</th>
+          <th>Date</th>
+          <th>Montant</th>
+          <th>Statut</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let paiement of paiements">
+          <td>{{ paiement.id }}</td>
+          <td>{{ paiement.reservation.id }}</td>
+          <td>{{ paiement.datePaiement | date }}</td>
+          <td>{{ paiement.montant | currency:'USD' }}</td>
+          
+          <td>{{ paiement.statut | statutPaiement }}</td>
+
+          <td>
+            <button class="btn btn-danger" (click)="deletePaiement(paiement.id!)">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
