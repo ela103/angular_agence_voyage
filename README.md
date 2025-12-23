@@ -1,59 +1,107 @@
-# AgenceVoyageFront
+# Agence de Voyage - Application Frontend Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.10.
+## Contexte du projet
+Ce projet constitue la partie **frontend** d'une application d'agence de voyage. Il est développé en **Angular** et consomme les API REST créées lors du backend (DS1) avec Spring Boot. L’objectif est de permettre la gestion des clients, voyages, réservations et paiements via une interface web moderne.
 
-## Development server
+L’application respecte les notions vues en cours :  
+- Data binding (interpolation, property binding, event binding, two-way binding)  
+- Directives structurelles et attributives (*ngFor, *ngIf, ngClass)  
+- Communication entre composants (@Input, @Output, EventEmitter)  
+- Utilisation de pipes standards et personnalisés  
+- Hooks du cycle de vie (ngOnInit, ngOnDestroy)  
+- Formulaires avec validation et messages d’erreur  
+- Services Angular avec HttpClient pour les opérations CRUD
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## Technologies utilisées
+- **Frontend** : Angular, TypeScript, HTML, CSS, Bootstrap  
+- **Backend** : Spring Boot (REST API existantes)  
+- **Outils** : VS Code, Git, GitHub, Node.js, npm  
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
+## Organisation du projet
+Le projet Angular est organisé comme suit :
 
-## Code scaffolding
+src/app/
+├─ client-list.ts / client-form.ts
+├─ voyage-list.ts / voyage-form.ts
+├─ reservation-list.ts / reservation-form.ts
+├─ paiement-list.ts / paiement-form.ts
+├─ models/
+│  ├─ client.ts
+│  ├─ voyage.ts
+│  ├─ reservation.ts
+│  ├─ reservation-dto.ts
+│  ├─ paiement.ts
+│  └─ enums/ (StatutPaiement, StatutReservation)
+├─ services/
+│  ├─ client.service.ts
+│  ├─ voyage.service.ts
+│  ├─ reservation.service.ts
+│  └─ paiement.service.ts
+├─ pipes/
+│  ├─ statut-paiement.pipe.ts
+│  └─ statut-reservation.pipe.ts
+├─ app.routes.ts
+└─ app.module.ts / main.ts
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Organisation du projet
+Le projet Angular est organisé comme suit :
 
-```bash
-ng generate component component-name
-```
+src/app/
+├─ client-list.ts / client-form.ts
+├─ voyage-list.ts / voyage-form.ts
+├─ reservation-list.ts / reservation-form.ts
+├─ paiement-list.ts / paiement-form.ts
+├─ models/
+│  ├─ client.ts
+│  ├─ voyage.ts
+│  ├─ reservation.ts
+│  ├─ reservation-dto.ts
+│  ├─ paiement.ts
+│  └─ enums/ (StatutPaiement, StatutReservation)
+├─ services/
+│  ├─ client.service.ts
+│  ├─ voyage.service.ts
+│  ├─ reservation.service.ts
+│  └─ paiement.service.ts
+├─ pipes/
+│  ├─ statut-paiement.pipe.ts
+│  └─ statut-reservation.pipe.ts
+├─ app.routes.ts
+└─ app.module.ts / main.ts
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Fonctionnalités principales
 
-```bash
-ng generate --help
-```
+Gestion des clients : ajout, modification, suppression, affichage
 
-## Building
+Gestion des voyages : ajout, modification, suppression, affichage
 
-To build the project run:
+Gestion des réservations : ajout, modification, suppression, affichage, calcul montant total
 
-```bash
-ng build
-```
+Gestion des paiements : ajout, suppression, affichage, lien avec réservation
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Validation des formulaires avec messages d’erreur pour les champs obligatoires
 
-## Running unit tests
+Hooks Angular : ngOnInit, ngOnDestroy pour initialisation et nettoyage
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Pipes personnalisés pour l’affichage des statuts 
 
-```bash
-ng test
-```
+ Instructions pour lancer le projet
+1. Cloner le repository :  
+   `git clone <URL_GITHUB>`
+2. Installer les dépendances :  
+   `npm install`
+3. Lancer le serveur Angular :  
+   `ng serve`
+4. Accéder à l’application sur :  
+   `http://localhost:4200`
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## Conclusion
+Le projet frontend Angular est une interface complète pour gérer une agence de voyage.  
+Toutes les fonctionnalités principales sont connectées au backend via des API REST, avec une navigation fluide, des formulaires validés et des composants modulaires.  
+Ce projet démontre la maîtrise des concepts fondamentaux d’Angular, ainsi que la capacité à structurer un projet réel et à consommer des services backend existants.
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
